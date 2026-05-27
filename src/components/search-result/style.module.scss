@@ -1,0 +1,51 @@
+.panel {
+  background: #1a1a2e;
+  border: 1px solid #c8a96e;
+  border-radius: 12px;
+  padding: 24px 32px;
+  text-align: center;
+  min-width: 280px;
+}
+
+.title {
+  font-size: 1.4rem;
+  color: #c8a96e;
+  margin: 0 0 4px;
+}
+
+.artist {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin: 0 0 16px;
+}
+
+.bar {
+  background: #333;
+  border-radius: 8px;
+  height: 10px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.fill {
+  height: 100%;
+  background: linear-gradient(90deg, #c8a96e, #e8d9b5);
+  border-radius: 8px;
+  transition: width 0.5s ease;
+}
+
+.score {
+  font-size: 0.85rem;
+  color: #888;
+  margin: 0;
+}
+
+.info {
+  color: #aaa;
+  margin: 0;
+}
+
+.error {
+  color: #e57373;
+  margin: 0;
+}

@@ -1,0 +1,59 @@
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.label {
+  font-size: 1rem;
+  color: #888;
+  margin: 0;
+  height: 1.5em;
+  transition: color 0.3s;
+}
+
+.image {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  cursor: pointer;
+  border-radius: 12px;
+  border: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.bounce {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.bubble {
+  position: relative;
+  background: #fff;
+  color: #222;
+  font-size: 0.9rem;
+  font-family: 'Pretendard', sans-serif;
+  padding: 10px 16px;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-bottom-color: #fff;
+  }
+}

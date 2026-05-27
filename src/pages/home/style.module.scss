@@ -1,0 +1,175 @@
+.page {
+  position: relative;
+  min-height: 100vh;
+  background-image: url('../../assets/background.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #f0e6d3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 16px 80px;
+  gap: 32px;
+  font-family: 'Pretendard', sans-serif;
+}
+
+// 오른쪽 상단 버튼 그룹
+.topRight {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  display: flex;
+  gap: 8px;
+}
+
+.adminBtn {
+  padding: 7px 14px;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid #333;
+  border-radius: 8px;
+  color: #aaa;
+  font-size: 0.8rem;
+  font-family: 'Pretendard', sans-serif;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  backdrop-filter: blur(6px);
+
+  &:hover {
+    background: rgba(200, 169, 110, 0.15);
+    border-color: #c8a96e;
+    color: #c8a96e;
+  }
+}
+
+.heading {
+  font-size: 2.8rem;
+  color: #c8a96e;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.sub {
+  color: #888;
+  margin: -20px 0 0;
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.midiStatus {
+  font-size: 0.82rem;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid #333;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.midiConnected    { color: #81c784; }
+.midiDisconnected { color: #888; }
+.midiUnsupported  { color: #e57373; }
+.midiError        { color: #e57373; }
+
+.noteDisplay {
+  font-size: 0.9rem;
+  color: #aaa;
+  word-break: break-all;
+  text-align: center;
+}
+
+.noteLabel {
+  color: #c8a96e;
+  font-weight: bold;
+}
+
+.noteValues {
+  font-family: monospace;
+}
+
+// Shazam 스타일 상태 표시
+@keyframes ripple {
+  0%   { transform: scale(1);   opacity: 0.8; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+
+.statusBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+}
+
+.pulse {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(200, 169, 110, 0.15);
+  border: 2px solid rgba(200, 169, 110, 0.4);
+  position: relative;
+
+  &.active::before,
+  &.active::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 50%;
+    border: 2px solid rgba(200, 169, 110, 0.5);
+    animation: ripple 1.6s ease-out infinite;
+  }
+
+  &.active::after {
+    animation-delay: 0.8s;
+  }
+}
+
+.statusMsg {
+  font-size: 1rem;
+  color: #c8a96e;
+  margin: 0;
+  text-align: center;
+  min-height: 1.5em;
+  transition: opacity 0.4s;
+}
+
+.tentative {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin: 0;
+  text-align: center;
+
+  strong { color: #e8d9b5; }
+}
+
+.errorMsg {
+  color: #e57373;
+  font-size: 0.9rem;
+}
+
+%btn-base {
+  padding: 10px 28px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: inherit;
+  transition: opacity 0.2s, transform 0.1s;
+
+  &:hover { opacity: 0.85; }
+  &:active { transform: scale(0.97); }
+  &:disabled { opacity: 0.5; cursor: not-allowed; }
+}
+
+.btnClear {
+  @extend %btn-base;
+  background: #333;
+  color: #f0e6d3;
+}
