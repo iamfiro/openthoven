@@ -149,6 +149,104 @@
   strong { color: #e8d9b5; }
 }
 
+// 결과 풀스크린 오버레이
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.resultOverlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  background: rgba(5, 5, 15, 0.88);
+  backdrop-filter: blur(16px);
+  z-index: 50;
+  animation: fadeInScale 0.4s ease;
+}
+
+.resultCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  padding: 0 24px;
+}
+
+.resultLabel {
+  font-size: 0.9rem;
+  color: #888;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.resultTitle {
+  font-size: 2.4rem;
+  color: #f0e6d3;
+  font-weight: 700;
+  margin: 4px 0 0;
+  letter-spacing: -0.02em;
+
+  &.dim { color: #666; }
+}
+
+.resultArtist {
+  font-size: 1rem;
+  color: #c8a96e;
+  margin: 0 0 12px;
+}
+
+.resultBar {
+  width: 220px;
+  height: 4px;
+  background: #2a2a2a;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.resultFill {
+  height: 100%;
+  background: linear-gradient(90deg, #c8a96e, #f0e6d3);
+  border-radius: 4px;
+  transition: width 0.8s ease;
+}
+
+.resultScore {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 0;
+}
+
+.timeoutSub {
+  font-size: 0.82rem;
+  color: #555;
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+
+.btnRetry {
+  padding: 12px 36px;
+  background: transparent;
+  border: 1px solid #444;
+  border-radius: 30px;
+  color: #aaa;
+  font-size: 0.95rem;
+  font-family: 'Pretendard', sans-serif;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+
+  &:hover {
+    border-color: #c8a96e;
+    color: #c8a96e;
+  }
+}
+
 .errorMsg {
   color: #e57373;
   font-size: 0.9rem;
